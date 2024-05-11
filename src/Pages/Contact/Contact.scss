@@ -1,0 +1,147 @@
+.contact-main-div {
+  width: 77vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.contact-main-div .contact-container-div {
+  width: 90%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 1rem;
+  margin-bottom: 3rem;
+
+  > h3 {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2.1rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+
+    > span {
+      color: rgba(0, 0, 255, 0.6);
+    }
+  }
+
+  > .instruction-para {
+    font-size: 1.1rem;
+    margin-bottom: 1.9rem;
+    line-height: 1.4rem;
+    padding: 1rem;
+    text-align: start;
+
+    > span {
+      color: rgba(0, 0, 255, 0.6);
+      font-weight: 650;
+    }
+  }
+
+  > .form-div {
+    display: grid;
+    place-items: center;
+    height: 58%;
+
+    > form {
+      background-color: whitesmoke;
+      border-radius: 12px;
+      width: 70%;
+      height: 100%;
+      padding: 1rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      > a {
+        color: rgba(0, 0, 255, 0.7);
+        text-decoration: none;
+      }
+
+      > div {
+        > label {
+          display: inline-block;
+          font-size: 1.2rem;
+          margin-left: 0.3rem;
+          letter-spacing: 1px;
+          font-weight: 600;
+          margin-top: 0.5rem;
+          margin-bottom: 0.3rem;
+        }
+
+        > input {
+          width: 80%;
+          border: none;
+          outline: none;
+          font-size: 1rem;
+          padding: 0.5rem 0.8rem;
+          margin-top: 0.9rem;
+          margin-bottom: 0.3rem;
+          border-radius: 12px;
+        }
+
+        > textarea {
+          margin-top: 0.9rem;
+          margin-bottom: 0.3rem;
+          width: 80%;
+          border: none;
+          outline: none;
+          padding: 0.5rem 0.8rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .contact-main-div .contact-container-div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-main-div {
+    width: 98vw;
+  }
+}
+
+@media (max-width: 670px) {
+  .contact-main-div .contact-container-div .form-div form {
+    width: 85%;
+  }
+}
+
+@media (max-width: 490px) {
+  .contact-main-div .contact-container-div .form-div form {
+    width: 98%;
+  }
+
+  .contact-main-div .contact-container-div .form-div form div input,
+  .contact-main-div .contact-container-div .form-div form div textarea {
+    width: 95%;
+  }
+}
+
+@media (max-width: 370px) {
+  .contact-main-div .contact-container-div h3 {
+    margin-top: 4.3rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .contact-main-div .contact-container-div {
+    width: 100%;
+    padding: 0.3rem;
+  }
+
+  .contact-main-div .contact-container-div .form-div form {
+    width: 99%;
+    padding: 0.8rem;
+  }
+
+  .contact-main-div .contact-container-div .form-div form div input,
+  .contact-main-div .contact-container-div .form-div form div textarea {
+    width: 99%;
+  }
+}

@@ -1,0 +1,161 @@
+body {
+  overflow: hidden;
+}
+
+@mixin position() {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin gridCenter() {
+  display: grid;
+  place-items: center;
+}
+
+.main-form-div {
+  width: 100vw;
+  height: 100vh;
+  @include gridCenter();
+  position: relative;
+  overflow: hidden;
+
+  > .overlay-form-div {
+    @include position();
+    z-index: 2;
+    backdrop-filter: blur(1px);
+    width: 100%;
+    height: 100%;
+  }
+
+  > .form-div {
+    position: relative;
+    z-index: 3;
+    background-color: rgba(19, 71, 203, 0.996);
+    @include gridCenter();
+    width: 41%;
+    height: 94%;
+    border-radius: 21px;
+    padding-top: 2.1rem;
+    padding-bottom: 2.1rem;
+    -webkit-box-shadow: 10px 10px 77px 29px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 10px 10px 77px 29px rgba(255, 255, 255, 0.75);
+    box-shadow: 10px 10px 77px 29px rgba(255, 255, 255, 0.75);
+
+    > h3 {
+      border-bottom: 3px solid white;
+      padding-bottom: 3px;
+      font-weight: 800;
+      color: white;
+    }
+
+    > form {
+      width: 70%;
+      @include gridCenter();
+      margin-top: 1.2rem;
+
+      > p {
+        margin-top: 1.7rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+
+        > a {
+          color: whitesmoke;
+        }
+      }
+
+      > .submit-btn {
+        border: none;
+        outline: none;
+        margin-top: 1.9rem;
+        font-size: 1rem;
+        padding: 9px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      > div:first-child {
+        margin-top: 0;
+      }
+
+      > div {
+        width: 100%;
+        position: relative;
+        margin-top: 1.5rem;
+
+        > input {
+          width: 90%;
+          margin-left: 1rem;
+          margin-top: 0.5rem;
+          padding-left: 0.8rem;
+          height: 2.3rem;
+          border: none;
+          outline: none;
+          border-radius: 10px;
+          font-size: 1rem;
+        }
+
+        > label {
+          margin-left: 1rem;
+          padding-left: 9px;
+          font-size: 1.1rem;
+          font-weight: 700;
+          letter-spacing: 2px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  > .form-video-div {
+    @include position();
+
+    > video {
+      min-width: 100%;
+      min-height: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: 1370px) {
+  .main-form-div .form-div {
+    width: 55%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-form-div .form-div {
+    width: 65%;
+  }
+}
+
+@media (max-width: 823px) {
+  .main-form-div .form-div {
+    width: 75%;
+  }
+}
+
+@media (max-width: 660px) {
+  .main-form-div .form-div {
+    width: 90%;
+  }
+}
+
+@media (max-width: 560px) {
+  .main-form-div .form-div {
+    width: 98%;
+  }
+  .main-form-div .form-div form {
+    width: 88%;
+  }
+}

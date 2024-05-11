@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap");
+
+@mixin flexDev($flex, $justify, $align, $direction) {
+  display: $flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin backWid {
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.073);
+}
+
+.heart {
+  color: red;
+}
+
+.main-one-blog-div {
+  width: 100%;
+  height: 100%;
+  @include flexDev(flex, flex-start, center, column);
+  overflow: hidden;
+
+  > .first-heading-div {
+    width: 100%;
+    text-align: center;
+    margin-top: 4.1rem;
+
+    > h3 {
+      font-size: 1.4rem;
+
+      > span {
+        font-size: 1.4rem;
+        color: rgba(0, 0, 255, 0.7);
+      }
+    }
+  }
+
+  > .blog-container-data-div {
+    overflow-y: scroll;
+    width: 100%;
+    @include flexDev(flex, flex-start, center, column);
+    margin-top: 2.6rem;
+    overflow-x: hidden;
+
+    > .picture-upload-form {
+      background-color: whitesmoke;
+      width: 90%;
+      margin-top: 1.4rem;
+      padding: 0.8rem;
+
+      > input {
+        margin-left: 8px;
+      }
+
+      > button {
+        outline: none;
+        border: none;
+        padding: 0.4rem 0.6rem;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+
+    > .all-comments-para {
+      display: inline-block;
+      margin-top: 3rem;
+      font-size: 1.3rem;
+      padding: 1rem;
+
+      > span {
+        font-family: "Roboto Slab", serif;
+      }
+    }
+
+    > .blog-image-heading-div {
+      @include backWid();
+      height: 28%;
+      @include flexDev(flex, center, center, "");
+      padding: 1.7rem;
+      border-radius: 10px;
+
+      > p {
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+
+        > span {
+          color: rgba(0, 0, 255, 0.7);
+          font-weight: 600;
+        }
+      }
+
+      > a {
+        display: inline-block;
+        width: 30%;
+
+        > img {
+          width: 120px;
+          height: 120px;
+          border-radius: 100%;
+          padding: 0.7rem;
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    > .description-container-div {
+      @include backWid();
+      font-size: 1.4rem;
+      padding: 1.2rem;
+      margin-top: 1.7rem;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+
+      > p {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+      }
+    }
+
+    > .like-comment-container-div {
+      @include backWid();
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      > div {
+        width: 100%;
+        display: flex;
+
+        > p {
+          width: 50%;
+          text-align: center;
+
+          > i {
+            font-size: 1.1rem;
+            cursor: pointer;
+          }
+
+          > span {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .comment-form {
+        margin-top: 1.4rem;
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+
+        > input {
+          border: none;
+          outline: none;
+          height: 2.3rem;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          padding: 0.5rem;
+          width: 50%;
+          font-size: 1.1rem;
+        }
+
+        > button {
+          border: none;
+          outline: none;
+          height: 2.3rem;
+          font-size: 1rem;
+          padding: 0.5rem 0.7rem;
+          cursor: pointer;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          background-color: rgba(0, 0, 255, 0.7);
+          color: white;
+        }
+      }
+    }
+
+    > .all-comments-container-div {
+      @include backWid();
+      border-radius: 10px;
+      margin-top: 2rem;
+      padding: 1.2rem;
+      @include flexDev(flex, space-around, flex-start, column);
+      margin-bottom: 1.2rem;
+
+      > div {
+        @include flexDev(flex, flex-start, center, "");
+        width: 80%;
+        margin-top: 1.2rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+
+        > a > img {
+          width: 89px;
+          height: 89px;
+          border-radius: 100%;
+          padding: 0.7rem;
+        }
+
+        > p {
+          margin-left: 1rem;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 635px) {
+  .main-one-blog-div .blog-container-data-div .blog-image-heading-div,
+  .main-one-blog-div .blog-container-data-div .description-container-div {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 535px) {
+  .main-one-blog-div .blog-container-data-div .all-comments-container-div div {
+    width: 95%;
+  }
+
+  .main-one-blog-div .blog-container-data-div .blog-image-heading-div a img,
+  .main-one-blog-div
+    .blog-container-data-div
+    .all-comments-container-div
+    div
+    a
+    img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .main-one-blog-div .blog-container-data-div .blog-image-heading-div p {
+    margin-left: 5px;
+  }
+
+  .main-one-blog-div .first-heading-div {
+    margin-top: 2.3rem;
+  }
+
+  // .main-one-blog-div .blog-container-data-div .blog-image-heading-div a img,
+  // .main-one-blog-div .blog-container-data-div form button {
+  //   margin-top: 0.8rem;
+  //   margin-left: 0.5rem;
+  //   padding: 0.3rem 0.3rem;
+  // }
+}
+
+@media (max-width: 442px) {
+  .main-one-blog-div .first-heading-div {
+    margin-top: 4.85rem;
+  }
+
+  .main-one-blog-div .blog-container-data-div .blog-image-heading-div {
+    padding: 0.8rem;
+  }
+
+  .main-one-blog-div
+    .blog-container-data-div
+    .like-comment-container-div
+    .comment-form
+    input {
+    width: 80%;
+  }
+
+  .main-one-blog-div .blog-container-data-div .all-comments-container-div {
+    padding: 0.5rem;
+  }
+
+  .main-one-blog-div .blog-container-data-div .blog-image-heading-div a img,
+  .main-one-blog-div
+    .blog-container-data-div
+    .all-comments-container-div
+    div
+    a
+    img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-one-blog-div .blog-container-data-div .blog-image-heading-div,
+  .main-one-blog-div .blog-container-data-div .description-container-div,
+  .main-one-blog-div .blog-container-data-div .like-comment-container-div,
+  .main-one-blog-div .blog-container-data-div .all-comments-container-div {
+    width: 98%;
+  }
+
+  .main-one-blog-div .blog-container-data-div .all-comments-container-div div {
+    width: 99%;
+  }
+
+  .main-one-blog-div .blog-container-data-div .all-comments-container-div {
+    padding: 0rem;
+    width: 100%;
+  }
+}

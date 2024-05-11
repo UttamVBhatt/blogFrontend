@@ -1,0 +1,230 @@
+.account-main-div {
+  width: 77vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.account-main-div .account-container-div {
+  width: 90%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 1rem;
+
+  > h3 {
+    text-align: center;
+    margin-top: 2.3rem;
+    font-size: 1.2rem;
+
+    > span {
+      color: rgba(0, 0, 255, 0.5);
+    }
+  }
+}
+
+.account-detail-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 98%;
+  margin-top: 2.3rem;
+  background-color: whitesmoke;
+  padding: 1.2rem;
+  border-radius: 10px;
+
+  > .user-image-div {
+    width: 20;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    > form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      > input {
+        width: 70%;
+        border: none;
+      }
+
+      > button {
+        border: none;
+        outline: none;
+        width: 70%;
+        font-size: 1rem;
+        text-decoration: underline;
+        color: blue;
+        margin-top: 1rem;
+        background-color: whitesmoke;
+        cursor: pointer;
+      }
+    }
+
+    > img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 2.1rem;
+      border-radius: 100%;
+    }
+  }
+
+  > .user-details-div {
+    width: 70%;
+    padding: 1rem;
+
+    > p {
+      line-height: 1.4rem;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    > .follow-unfollow-div {
+      margin-top: 1.4rem;
+      margin-bottom: 0.7rem;
+
+      > span {
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: rgba(0, 0, 255, 0.5);
+
+        > span {
+          color: black;
+          display: inline-block;
+          margin-top: 1rem;
+        }
+      }
+
+      > .following-span {
+        display: inline-block;
+        margin-left: 2rem;
+      }
+
+      > button {
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        padding: 0.6rem 0.7rem;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: rgba(0, 0, 255, 0.5);
+        color: white;
+
+        &:last-child {
+          margin-left: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.filter-div {
+  background-color: rgba(245, 245, 245, 0.526);
+  margin-top: 2.8rem;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  > a {
+    text-decoration: none;
+    color: white;
+
+    > p {
+      cursor: pointer;
+      background-color: rgba(0, 0, 255, 0.5);
+      padding: 0.8rem 0.6rem;
+      border-radius: 8px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .account-main-div .account-container-div {
+    width: 100%;
+  }
+}
+
+.account-main-div .account-container-div h3 {
+  margin-top: 3.2rem;
+}
+
+@media (max-width: 900px) {
+  .account-main-div {
+    width: 98vw;
+  }
+
+  .account-main-div .account-container-div .account-detail-div {
+    width: 100%;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 636px) {
+  .account-main-div {
+    width: 100vw;
+  }
+  .account-detail-div {
+    flex-direction: column;
+  }
+
+  .account-detail-div .user-details-div {
+    width: 99%;
+  }
+
+  .account-detail-div .user-details-div p {
+    margin-top: 1rem;
+  }
+
+  .account-detail-div .user-details-div .follow-unfollow-div {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
+  .account-detail-div .user-details-div .follow-unfollow-div span {
+    margin-top: 0rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .account-detail-div {
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .account-detail-div .user-image-div {
+    margin-top: 1.4rem;
+  }
+
+  .account-detail-div .user-details-div {
+    padding: 0.5rem;
+    margin-top: 1.2rem;
+  }
+
+  .account-detail-div .user-details-div .follow-unfollow-div .following-span {
+    margin-left: 0.8rem;
+  }
+
+  .account-detail-div .user-details-div .follow-unfollow-div .following-span {
+    margin-left: 0rem;
+  }
+
+  .account-detail-div .user-image-div img {
+    width: 86px;
+    height: 86px;
+  }
+}
+
+@media (max-width: 330px) {
+  .account-detail-div .user-details-div .follow-unfollow-div span {
+    letter-spacing: 0px;
+  }
+}
