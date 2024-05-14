@@ -20,6 +20,8 @@ import UpdatePassword from "./Components/UpdatePassword/UpdatePassword";
 import UpdateData from "./Components/UpdateData/UpdateData";
 import BlogsDiv from "./Components/BlogsDiv/BlogsDiv";
 import OneBlog from "./Components/OneBlog/OneBlog";
+import Followers from "./Components/Followers/Followers";
+import Following from "./Components/Following/Following";
 
 import { useAuthController } from "./contexts/AuthProvider";
 
@@ -47,6 +49,8 @@ function App() {
 
             <Route path="/me/:id" element={<Me />}>
               <Route path="/me/:id" element={<UpdatePassword />} />
+              <Route path="/me/:id/my-followers" element={<Followers />} />
+              <Route path="/me/:id/my-following" element={<Following />} />
               <Route path="/me/:id/my-likes" element={<MyLikes />} />
               <Route path="/me/:id/my-blogs" element={<MyBlogs />} />
               <Route path="/me/:id/my-comments" element={<MyComments />} />

@@ -92,14 +92,19 @@
       margin-bottom: 0.7rem;
 
       > span {
-        font-weight: 700;
-        letter-spacing: 1px;
-        color: rgba(0, 0, 255, 0.5);
+        > a {
+          font-weight: 700;
+          letter-spacing: 1px;
+          color: rgba(0, 0, 255, 0.5);
+          text-decoration: none;
+        }
 
         > span {
           color: black;
           display: inline-block;
           margin-top: 1rem;
+          cursor: pointer;
+          margin-left: 0.3rem;
         }
       }
 

@@ -122,11 +122,13 @@ function Me() {
               {id === user?._id ? (
                 <>
                   <span>
-                    Followers : <span> {user?.followers?.length || 0}</span>
+                    <Link to={`/me/${id}/my-followers`}>Followers</Link> :
+                    <span> {user?.followers?.length || 0}</span>
                   </span>
 
                   <span className="following-span">
-                    Following : <span>{user?.following?.length || 0}</span>
+                    <Link to={`/me/${id}/my-following`}>Following</Link> :
+                    <span>{user?.following?.length || 0}</span>
                   </span>
                 </>
               ) : (
