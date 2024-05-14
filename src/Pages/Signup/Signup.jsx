@@ -69,7 +69,14 @@ function Signup() {
         setUser(data?.data?.data?.user);
         navigate("/");
       } catch (err) {
-        alert(err?.response?.data?.message);
+        if (err?.response?.data?.message !== undefined) {
+          alert(err?.response?.data?.message);
+        } else {
+          alert(
+            "Error while logging in , please check your internet connection or try again later"
+          );
+        }
+
         setIsLoading(false);
         console.log(err);
         console.log(err?.response?.data?.message);

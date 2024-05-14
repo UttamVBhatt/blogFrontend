@@ -47,7 +47,15 @@ function Login() {
         navigate("/");
       } catch (err) {
         setIsLoading(false);
-        alert(err?.response?.data?.message);
+
+        if (err?.response?.data?.message !== undefined) {
+          alert(err?.response?.data?.message);
+        } else {
+          alert(
+            "Error while logging in , please check your internet connection or try again later"
+          );
+        }
+
         console.log(err);
         console.log(err?.response?.data?.message);
         navigate("/");

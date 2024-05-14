@@ -20,13 +20,18 @@ function Me() {
   useEffect(() => {
     async function getLoggedInUser() {
       try {
+        setIsLoading(true);
+
         const data = await axios({
           method: "GET",
           url: `${BASE_URL}/api/v1/users/${user._id}`,
         });
 
         setLoggedInUser(data?.data?.data?.doc);
+
+        setIsLoading(false);
       } catch (err) {
+        setIsLoading(false);
         console.log(err);
         console.log(err?.response?.data?.message);
       }
@@ -37,6 +42,8 @@ function Me() {
   useEffect(() => {
     async function getBlogsUser() {
       try {
+        setIsLoading(true);
+
         const data = await axios({
           method: "GET",
           url: `${BASE_URL}/api/v1/users/${id}`,
@@ -45,7 +52,10 @@ function Me() {
         if (id === user._id) return navigate(`/me/${id}`);
 
         setBlogsUser(data?.data?.data?.doc);
+
+        setIsLoading(false);
       } catch (err) {
+        setIsLoading(false);
         console.log(err);
         console.log(err?.response?.data?.message);
       }

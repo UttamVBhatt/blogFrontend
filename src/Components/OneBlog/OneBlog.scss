@@ -43,6 +43,9 @@
     @include flexDev(flex, flex-start, center, column);
     margin-top: 2.6rem;
     overflow-x: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     > .picture-upload-form {
       background-color: whitesmoke;

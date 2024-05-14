@@ -13,6 +13,9 @@
   padding: 1.2rem 1.2rem 1.4rem 1.2rem;
   margin-top: 1.6rem;
   margin-bottom: 1.4rem;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   > h3 {
     margin-top: 1.3rem;
