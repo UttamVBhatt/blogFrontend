@@ -11,19 +11,7 @@ function SideNav() {
   const navigate = useNavigate();
   const mainRef = useRef(0);
 
-  async function handleLogOut() {
-    try {
-      const data = await axios({
-        method: "GET",
-        url: `${BASE_URL}/api/v1/users/logout`,
-      });
-
-      alert(data?.data?.message);
-    } catch (err) {
-      console.log(err);
-      alert("Error while logging out , try again later");
-    }
-
+  function handleLogOut() {
     navigate("/");
     document.cookie = "jwt" + "=" + null;
     setIsLoggedIn(false);
@@ -67,7 +55,7 @@ function SideNav() {
             </li>
 
             <li onClick={handleLogOut}>
-              <NavLink to={"/"}>LogOut</NavLink>
+              <NavLink to={"/logout"}>LogOut</NavLink>
             </li>
           </ul>
         </nav>
