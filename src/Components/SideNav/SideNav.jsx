@@ -2,15 +2,28 @@ import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuthController } from "./../../contexts/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import "./SideNav.scss";
 
 function SideNav() {
-  const { setIsLoggedIn, user } = useAuthController();
+  const { setIsLoggedIn, user, BASE_URL } = useAuthController();
   const navigate = useNavigate();
   const mainRef = useRef(0);
 
-  function handleLogOut() {
+  async function handleLogOut() {
+    try {
+      const data = await axios({
+        method: "GET",
+        url: `${BASE_URL}/api/v1/users/logout`,
+      });
+
+      alert(data?.data?.message);
+    } catch (err) {
+      console.log(err);
+      alert("Error while logging out , try again later");
+    }
+
     navigate("/");
     document.cookie = "jwt" + "=" + null;
     setIsLoggedIn(false);
@@ -54,7 +67,7 @@ function SideNav() {
             </li>
 
             <li onClick={handleLogOut}>
-              <NavLink to={"/logout"}>LogOut</NavLink>
+              <NavLink to={"/"}>LogOut</NavLink>
             </li>
           </ul>
         </nav>

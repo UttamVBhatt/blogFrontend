@@ -90,6 +90,10 @@
     overflow-y: scroll;
     padding: 1rem;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     > .blog-div:first-child {
       margin-top: 1.7rem;
     }

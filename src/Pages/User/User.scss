@@ -18,6 +18,9 @@
   height: 100%;
   overflow-y: scroll;
   padding: 1rem;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   > h3 {
     text-align: center;

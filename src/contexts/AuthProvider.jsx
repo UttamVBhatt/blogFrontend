@@ -8,7 +8,6 @@ export const useAuthController = () => useContext(AuthContext);
 function AuthController({ children }) {
   const [user, setUser] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const BASE_URL = "https://blogbackend-kv13.onrender.com";
   const BASE_URL = "https://blogbackend-8joh.onrender.com";
 
   return (
