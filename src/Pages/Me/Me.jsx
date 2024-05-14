@@ -37,11 +37,6 @@ function Me() {
     getUser();
   }, [photo, setPhoto]);
 
-  const upperCasedName = user?.name
-    ?.split(" ")
-    .map((word) => word[0].toUpperCase() + word.slice(1))
-    .join(" ");
-
   const uploadImage = async () => {
     const formData = new FormData();
     formData.append("photo", photo);
@@ -63,7 +58,17 @@ function Me() {
     <div className="account-main-div">
       <div className="account-container-div">
         <h3>
-          <span>{`${upperCasedName}`}</span>'s profile
+          {user.name && (
+            <>
+              <span>
+                {user?.name
+                  ?.split(" ")
+                  .map((word) => word[0].toUpperCase() + word.slice(1))
+                  .join(" ")}
+              </span>
+              's profile
+            </>
+          )}
         </h3>
 
         <div className="account-detail-div">
@@ -74,7 +79,7 @@ function Me() {
                   ? user?.imageURL
                   : defaultUserImage
               }
-              alt={upperCasedName}
+              alt={user?.name}
             />
 
             <form>

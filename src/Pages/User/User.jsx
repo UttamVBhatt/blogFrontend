@@ -34,11 +34,6 @@ function Me() {
     getLoggedInUser();
   }, []);
 
-  const upperCasedName = blogsUser?.name
-    ?.split(" ")
-    .map((word) => word[0].toUpperCase() + word.slice(1))
-    .join(" ");
-
   useEffect(() => {
     async function getBlogsUser() {
       try {
@@ -87,7 +82,17 @@ function Me() {
       ) : (
         <div className="account-container-div">
           <h3>
-            <span>{`${upperCasedName}`}</span>'s profile
+            {blogsUser.name && (
+              <>
+                <span>
+                  {blogsUser?.name
+                    ?.split(" ")
+                    .map((word) => word[0].toUpperCase() + word.slice(1))
+                    .join(" ")}
+                </span>
+                's profile
+              </>
+            )}
           </h3>
 
           <div className="account-detail-div">
@@ -96,9 +101,9 @@ function Me() {
                 src={
                   blogsUser?.photo === "default.jpg"
                     ? defaultImage
-                    : `/userImages/${blogsUser?.photo}`
+                    : blogsUser?.imageURL
                 }
-                alt={upperCasedName}
+                alt={blogsUser?.name}
               />
             </div>
 
@@ -142,15 +147,15 @@ function Me() {
 
           <div className="filter-div">
             <Link to={`/${id}/user/my-likes`}>
-              <p>{upperCasedName?.split(" ")[0]}'s Likes</p>
+              <p>{blogsUser?.name?.split(" ")[0]}'s Likes</p>
             </Link>
 
-            <Link to={`/${id}/user/my-blogs`}>
-              <p>{upperCasedName?.split(" ")[0]}'s Blogs</p>
+            <Link to={`/${id}/user`}>
+              <p>{blogsUser?.name?.split(" ")[0]}'s Blogs</p>
             </Link>
 
             <Link to={`/${id}/user/my-comments`}>
-              <p>{upperCasedName?.split(" ")[0]}'s Comments</p>
+              <p>{blogsUser?.name?.split(" ")[0]}'s Comments</p>
             </Link>
           </div>
 

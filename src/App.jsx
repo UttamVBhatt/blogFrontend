@@ -37,8 +37,8 @@ function App() {
               <Route index path="/" element={<BlogsDiv />} />
               <Route path="/:id" element={<OneBlog />} />
               <Route path="/:id/user" element={<User />}>
+                <Route path="/:id/user" element={<MyBlogs />} />
                 <Route path="/:id/user/my-likes" element={<MyLikes />} />
-                <Route path="/:id/user/my-blogs" element={<MyBlogs />} />
                 <Route path="/:id/user/my-comments" element={<MyComments />} />
               </Route>
             </Route>
