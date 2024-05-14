@@ -24,6 +24,8 @@ function OneBlog() {
   const [added, setAdded] = useState(false);
   const [newComment, setNewComment] = useState("");
 
+  const [updatePhotoSpan, setUpdatePhotoSpan] = useState("Upload Blog Picture");
+
   const [loggedInUser, setLoggedInUser] = useState({});
 
   const navigate = useNavigate();
@@ -148,6 +150,13 @@ function OneBlog() {
     const formData = new FormData();
     formData.append("photo", photo);
 
+    if (!formData.photo)
+      return alert(
+        "Please provide an image file!, you can't upload empty image file"
+      );
+
+    setUpdatePhotoSpan("Uploading please wait.....");
+
     const data = await axios
       .patch(`${BASE_URL}/api/v1/blogs/upload-photo/${id}`, formData)
       .then((res) => res)
@@ -157,6 +166,8 @@ function OneBlog() {
     alert(data?.data?.message);
 
     setBlog(data?.data?.blog);
+
+    setUpdatePhotoSpan("Upload Blog Picture");
 
     navigate("/");
   };
@@ -200,7 +211,7 @@ function OneBlog() {
                   onChange={(e) => setPhoto(e.target.files[0])}
                 />
                 <button type="button" onClick={uploadPhoto}>
-                  Upload Blog Picture
+                  {updatePhotoSpan}
                 </button>
               </form>
             )}

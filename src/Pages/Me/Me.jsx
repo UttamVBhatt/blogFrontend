@@ -13,8 +13,11 @@ import "./Me.scss";
 function Me() {
   const { BASE_URL } = useAuthController();
   const { id } = useParams();
+
   const [photo, setPhoto] = useState();
   const [user, setUser] = useState({});
+  const [updatePhotoSpan, setUpdatePhotoSpan] = useState("Upload Image");
+
   const photoRef = useRef();
   const navigate = useNavigate();
 
@@ -41,6 +44,13 @@ function Me() {
     const formData = new FormData();
     formData.append("photo", photo);
 
+    if (!formData.photo)
+      return alert(
+        "Please provide an image file!, you can't upload empty image file"
+      );
+
+    setUpdatePhotoSpan("Uploading please wait....");
+
     const data = await axios
       .patch(`${BASE_URL}/api/v1/users/upload-photo/${user._id}`, formData)
       .then((res) => res.data)
@@ -48,6 +58,8 @@ function Me() {
       .finally();
 
     alert(data?.message);
+
+    setUpdatePhotoSpan("Upload Photo");
 
     navigate(`/`);
 
@@ -92,7 +104,7 @@ function Me() {
               />
 
               <button type="button" onClick={uploadImage}>
-                Upload Image
+                {updatePhotoSpan}
               </button>
             </form>
           </div>

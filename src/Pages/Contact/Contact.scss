@@ -114,6 +114,13 @@
 }
 
 @media (max-width: 490px) {
+  .contact-main-div .contact-container-div {
+    margin-bottom: 2.3rem;
+
+    > form {
+      margin-bottom: 1.2rem;
+    }
+  }
   .contact-main-div .contact-container-div .form-div form {
     width: 98%;
   }

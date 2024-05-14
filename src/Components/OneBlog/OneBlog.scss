@@ -270,6 +270,11 @@
 
   .main-one-blog-div .blog-container-data-div .all-comments-container-div {
     padding: 0.5rem;
+    margin-bottom: 3rem;
+
+    > div {
+      margin-bottom: 2.1rem;
+    }
   }
 
   .main-one-blog-div .blog-container-data-div .blog-image-heading-div a img,
