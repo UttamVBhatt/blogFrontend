@@ -33,6 +33,9 @@
     padding: 0.8rem;
     background-color: whitesmoke;
     overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     > .liked-blog-div {
       display: flex;

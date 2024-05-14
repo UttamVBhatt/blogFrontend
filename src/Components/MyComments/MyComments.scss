@@ -26,6 +26,9 @@
     padding: 1.2rem;
     @include flexDev(flex, space-around, flex-start, column);
     margin-bottom: 1.2rem;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     > div {
       @include flexDev(flex, space-around, flex-start, column);
