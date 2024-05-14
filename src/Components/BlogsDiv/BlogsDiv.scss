@@ -280,6 +280,54 @@
   }
 }
 
+@media (max-width: 450px) {
+  .blogs-main-div .blog-container-div .blog-div .blog-desc-container-div {
+    padding: 0.8rem;
+  }
+
+  .blogs-main-div .blog-container-div .blog-div {
+    margin-bottom: 2.3rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .blogs-main-div
+    .blog-container-div
+    .blog-div
+    .blog-desc-container-div
+    .blog-likes-comments {
+    flex-direction: column;
+  }
+
+  .blogs-main-div
+    .blog-container-div
+    .blog-div
+    .blog-desc-container-div
+    .blog-likes-comments
+    .calendar-div {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  .blogs-main-div
+    .blog-container-div
+    .blog-div
+    .blog-desc-container-div
+    .blog-likes-comments
+    .category-div {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .blogs-main-div
+    .blog-container-div
+    .blog-div
+    .blog-desc-container-div
+    .blog-likes-comments
+    .comments-div {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+}
+
 @media (max-width: 406px) {
   .blogs-main-div .blog-container-div {
     width: 98%;
@@ -313,25 +361,5 @@
 
   .blogs-main-div .toggle-button-div button {
     padding: 0.2rem 0.5rem;
-  }
-}
-
-@media (max-width: 322px) {
-  .blogs-main-div
-    .blog-container-div
-    .blog-div
-    .blog-desc-container-div
-    .blog-likes-comments
-    .calendar-div {
-    width: 44%;
-  }
-
-  .blogs-main-div
-    .blog-container-div
-    .blog-div
-    .blog-desc-container-div
-    .blog-likes-comments
-    .category-div {
-    width: 42%;
   }
 }
