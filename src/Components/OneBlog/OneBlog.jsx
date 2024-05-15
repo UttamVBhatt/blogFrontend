@@ -150,12 +150,12 @@ function OneBlog() {
     const formData = new FormData();
     formData.append("photo", photo);
 
-    if (!formData.photo)
+    if (!photo)
       return alert(
-        "Please provide an image file!, you can't upload empty image file"
+        "Please provide an image file! you can't upload empty image file"
       );
 
-    setUpdatePhotoSpan("Uploading please wait.....");
+    setUpdatePhotoSpan("Uploading please wait.......");
 
     const data = await axios
       .patch(`${BASE_URL}/api/v1/blogs/upload-photo/${id}`, formData)
